@@ -96,6 +96,7 @@ axios.get(detailURL, {
     publishedAt: dayjs(item.snippet.publishedAt).format("YYYY-MM-DD"),
   };
   videoSrc.value = `https://www.youtube.com/embed/${video.value.videoId}`;
+  isLaterVideo.value = checkVideoInStorage();
   isLoading.value = false
 }).catch((error) => {
   console.log(error);
